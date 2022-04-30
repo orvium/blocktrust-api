@@ -6,10 +6,19 @@ import { UserDTO } from '../dtos/user/user.dto';
 import { UserDocument } from './user.schema';
 import { UserService } from './user.service';
 
+export interface UserData {
+  family_name: string,
+  given_name: string,
+  id: string,
+  name: string,
+  sub: string
+}
+
 @ApiTags('user')
 @Controller('user')
 export class UserController {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+  }
 
   /**
    * Get user by id
@@ -27,28 +36,25 @@ export class UserController {
   /**
    * Get all users
    */
-  @Get()
+  @Post()
   @ApiOkResponse({
     type: UserDTO,
   })
-  async getAll(): Promise<UserDocument[]> {
-    return await this.userService.find({});
-  }
+  async getUser(@Body() payload: UserData): Promise<UserDocument> {
+    const user = await this.userService.findOne({sub: payload.sub});
+    if (!user) {
+      return await this.userService.create({
+        firstName: payload.given_name,
+        lastName: payload.family_name,
+        sub: payload.sub
+      });
+    }
 
-
-  /**
-   * Create new user
-   */
-  @Post()
-  @ApiCreatedResponse({
-    type: UserDTO,
-  })
-  async create(@Body() payload: UserCreateDTO) {
-    return await this.userService.create(payload);
+    return user;
   }
 
   /**
-   * Update donor
+   * Update user
    */
   @Patch(':id([0-9a-f]{24})')
   @ApiOkResponse({

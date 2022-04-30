@@ -1,18 +1,18 @@
-import { IsOptional } from 'class-validator';
-import { USER_TYPE } from '../../user/user.schema';
+import { IsBoolean, IsOptional, IsString } from 'class-validator';
+import { USER_TYPE } from '../../enums/user-type.enum';
 
 export class UserUpdateDTO {
-  @IsOptional() firstName?: string;
-  @IsOptional() lastName?: string;
-  @IsOptional() email?: string;
-  @IsOptional() aboutMe?: string;
-  @IsOptional() orcid?: string;
-  @IsOptional() linkedin?: string;
-  @IsOptional() blog?: string;
-  @IsOptional() role?: string;
-  @IsOptional() starredPapers?: string[];
-  @IsOptional() isOnboarded?: boolean;
-  @IsOptional() acceptedTC?: boolean;
-  @IsOptional() disciplines?: string[];
+  @IsOptional() @IsString() firstName?: string;
+  @IsOptional() @IsString() lastName?: string;
+  @IsOptional() @IsString() email?: string;
+  @IsOptional() @IsString() aboutMe?: string;
+  @IsOptional() @IsString() orcid?: string;
+  @IsOptional() @IsString() linkedin?: string;
+  @IsOptional() @IsString() blog?: string;
+  @IsOptional() @IsString() role?: string;
+  @IsOptional() @IsString({ each: true }) starredPapers?: string[];
+  @IsOptional() @IsBoolean() isOnboarded?: boolean;
+  @IsOptional() @IsBoolean() acceptedTC?: boolean;
+  @IsOptional() @IsString({ each: true }) disciplines?: string[];
   @IsOptional() userType?: USER_TYPE;
 }

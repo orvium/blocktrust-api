@@ -1,9 +1,17 @@
+import { PAPER_STATUS } from '../../enums/paper-status.enum';
+import { PAPER_TYPE } from '../../enums/paper-type.enum';
+import { REVIEW_TYPE } from '../../enums/review-type.enum';
+import { Author } from '../general/author';
+import { FileMetadata } from '../general/file-metadata';
+import { HistoryLogLine } from '../general/history-log-line';
+
 export class PaperDTO {
   _id: string;
   creator: string;
   title: string;
   abstract: string;
-  createdOn: Date;
+  createdAt: Date;
+  updatedAt: Date;
   submissionDate: Date;
   publicationDate: Date;
   keywords: string[];
@@ -19,27 +27,10 @@ export class PaperDTO {
   openAireIdentifier: string;
   views: number;
   isLatestVersion: boolean;
-
-
-
-  // assignee: string;
-  // ownerProfile: UserSummaryDTO;
-  // nickname: string;
-  // publicationType: PUBLICATION_TYPE;
-  // accessRight: ACCESS_RIGHT;
-  // status: DEPOSIT_STATUS;
-  // peerReviews: ReviewSummaryDTO[];
-  // reviewType: REVIEW_TYPE;
-  // authors: AuthorDTO[];
-  // publicationFile: FileMetadata;
-  // files: FileMetadata[];
-  // gravatar: string;
-  // keccak256: string;
-  // url: string;
-  // pdfUrl: string;
-  // community: CommunityDTO;
-  // html: string;
-  // actions: string[];
-  // track: string;
-  // history: HistoryLogLine[];
+  paperType: PAPER_TYPE;
+  status: PAPER_STATUS;
+  reviewType: REVIEW_TYPE;
+  history: HistoryLogLine[];
+  authors: Author[];
+  publicationFile: FileMetadata;
 }

@@ -1,4 +1,4 @@
-import { USER_TYPE } from '../../user/user.schema';
+import { USER_TYPE } from '../../enums/user-type.enum';
 
 export class UserDTO {
   _id: string;
@@ -15,4 +15,5 @@ export class UserDTO {
   acceptedTC: boolean;
   disciplines: string[];
   userType: USER_TYPE;
+  sub: string;
 }

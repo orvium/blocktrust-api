@@ -1,17 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-
-export enum USER_TYPE {
-  student = 'student',
-  medical = 'medical',
-  business = 'business',
-  researcher = 'researcher',
-  citizen = 'citizen',
-  academic = 'academic',
-}
+import { USER_TYPE } from '../enums/user-type.enum';
 
 @Schema({ collection: 'user', timestamps: true })
 export class UserDocument extends Document {
+  @Prop({ trim: true }) sub?: string;
   @Prop({ trim: true }) firstName?: string;
   @Prop({ trim: true }) lastName?: string;
   @Prop({ unique: true, sparse: true, trim: true, lowercase: true })

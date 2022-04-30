@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { writeFileSync } from 'fs';
 import { AppModule } from './app.module';
 import { environment } from './environments/environment';
 
@@ -16,12 +17,14 @@ async function bootstrap(): Promise<void> {
 
   if (environment.name === 'development') {
     const config = new DocumentBuilder()
-      .setTitle('blocktrust API')
-      .setDescription('The blocktrust API description')
+      .setTitle('BlockTrust API')
+      .setDescription('The BlockTrust API description')
       .setVersion('1.0')
       .build();
 
     const document = SwaggerModule.createDocument(app, config);
+    const documentString = JSON.stringify(document, null, '  ');
+    writeFileSync('openapi.json', documentString);
     SwaggerModule.setup('api', app, document);
   }
 

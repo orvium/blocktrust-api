@@ -1,0 +1,1764 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/user/{id}": {
+      "get": {
+        "operationId": "UserController_getById",
+        "summary": "",
+        "description": "Get user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      },
+      "patch": {
+        "operationId": "UserController_update",
+        "summary": "",
+        "description": "Update user",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      },
+      "delete": {
+        "operationId": "UserController_delete",
+        "summary": "",
+        "description": "Delete user",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/user": {
+      "post": {
+        "operationId": "UserController_getUser",
+        "summary": "",
+        "description": "Get all users",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDocument"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/paper/{id}": {
+      "get": {
+        "operationId": "PaperController_getById",
+        "summary": "",
+        "description": "Get paper by id",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      },
+      "patch": {
+        "operationId": "PaperController_update",
+        "summary": "",
+        "description": "Update paper",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaperUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      },
+      "delete": {
+        "operationId": "PaperController_delete",
+        "summary": "",
+        "description": "Delete paper",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/paper": {
+      "get": {
+        "operationId": "PaperController_getAll",
+        "summary": "",
+        "description": "Get all papers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      },
+      "post": {
+        "operationId": "PaperController_create",
+        "summary": "",
+        "description": "Create new paper",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaperCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/paper/search": {
+      "get": {
+        "operationId": "PaperController_getByFilter",
+        "summary": "",
+        "description": "Get papers with filter",
+        "parameters": [
+          {
+            "name": "query",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/paper/my/{id}": {
+      "get": {
+        "operationId": "PaperController_getMy",
+        "summary": "",
+        "description": "Get all users papers",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaperDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/paper/upload": {
+      "post": {
+        "operationId": "PaperController_uploadedFile",
+        "summary": "",
+        "description": "Upload paper",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadata"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/paper/{filePath}": {
+      "get": {
+        "operationId": "PaperController_seeUploadedFile",
+        "summary": "",
+        "description": "Download paper",
+        "parameters": [
+          {
+            "name": "filePath",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "paper"
+        ]
+      }
+    },
+    "/review/{id}": {
+      "get": {
+        "operationId": "ReviewController_getById",
+        "summary": "",
+        "description": "Get review by id",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "review"
+        ]
+      },
+      "patch": {
+        "operationId": "ReviewController_update",
+        "summary": "",
+        "description": "Update review",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "review"
+        ]
+      },
+      "delete": {
+        "operationId": "ReviewController_delete",
+        "summary": "",
+        "description": "Delete review",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "review"
+        ]
+      }
+    },
+    "/review": {
+      "get": {
+        "operationId": "ReviewController_getAll",
+        "summary": "",
+        "description": "Get all reviews",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "review"
+        ]
+      },
+      "post": {
+        "operationId": "ReviewController_create",
+        "summary": "",
+        "description": "Create new review",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "review"
+        ]
+      }
+    },
+    "/reputation-model/{id}": {
+      "get": {
+        "operationId": "ReputationModelController_getById",
+        "summary": "",
+        "description": "Get rm by id",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReputationModelDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      },
+      "patch": {
+        "operationId": "ReputationModelController_update",
+        "summary": "",
+        "description": "Update rm",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReputationModelUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReputationModelDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      },
+      "delete": {
+        "operationId": "ReputationModelController_delete",
+        "summary": "",
+        "description": "Delete rm",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReputationModelDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      }
+    },
+    "/reputation-model/{id}/scorings": {
+      "get": {
+        "operationId": "ReputationModelController_getModelScorings",
+        "summary": "",
+        "description": "Get all scorings of a reputation model",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      }
+    },
+    "/reputation-model": {
+      "get": {
+        "operationId": "ReputationModelController_getAll",
+        "summary": "",
+        "description": "Get all rms",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReputationModelDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      },
+      "post": {
+        "operationId": "ReputationModelController_create",
+        "summary": "",
+        "description": "Create new rm",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReputationModelCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReputationModelDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "reputation-model"
+        ]
+      }
+    },
+    "/authentication": {
+      "post": {
+        "operationId": "AuthenticationController_login",
+        "summary": "",
+        "description": "Login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDocument"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "authentication"
+        ]
+      }
+    },
+    "/scoring/{id}": {
+      "get": {
+        "operationId": "ScoringController_getById",
+        "summary": "",
+        "description": "Get scoring by id",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "scoring"
+        ]
+      },
+      "patch": {
+        "operationId": "ScoringController_update",
+        "summary": "",
+        "description": "Update scoring",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScoringUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "scoring"
+        ]
+      },
+      "delete": {
+        "operationId": "ScoringController_delete",
+        "summary": "",
+        "description": "Delete scoring",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "scoring"
+        ]
+      }
+    },
+    "/scoring": {
+      "get": {
+        "operationId": "ScoringController_getAll",
+        "summary": "",
+        "description": "Get all scorings",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "scoring"
+        ]
+      },
+      "post": {
+        "operationId": "ScoringController_create",
+        "summary": "",
+        "description": "Create new scoring",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScoringCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringDTO"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "scoring"
+        ]
+      }
+    },
+    "/blockchain": {
+      "get": {
+        "operationId": "BlockchainController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainNetworkDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "BlockTrust API",
+    "description": "The BlockTrust API description",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "UserDTO": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "aboutMe": {
+            "type": "string"
+          },
+          "orcid": {
+            "type": "string"
+          },
+          "linkedin": {
+            "type": "string"
+          },
+          "blog": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "starredPapers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "isOnboarded": {
+            "type": "boolean"
+          },
+          "acceptedTC": {
+            "type": "boolean"
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "userType": {
+            "enum": [
+              "student",
+              "medical",
+              "business",
+              "researcher",
+              "citizen",
+              "academic"
+            ],
+            "type": "string"
+          },
+          "sub": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "firstName",
+          "lastName",
+          "email",
+          "aboutMe",
+          "orcid",
+          "linkedin",
+          "blog",
+          "role",
+          "starredPapers",
+          "isOnboarded",
+          "acceptedTC",
+          "disciplines",
+          "userType",
+          "sub"
+        ]
+      },
+      "UserDocument": {
+        "type": "object",
+        "properties": {}
+      },
+      "UserUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "aboutMe": {
+            "type": "string"
+          },
+          "orcid": {
+            "type": "string"
+          },
+          "linkedin": {
+            "type": "string"
+          },
+          "blog": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "starredPapers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "isOnboarded": {
+            "type": "boolean"
+          },
+          "acceptedTC": {
+            "type": "boolean"
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "userType": {
+            "type": "string",
+            "enum": [
+              "student",
+              "medical",
+              "business",
+              "researcher",
+              "citizen",
+              "academic"
+            ]
+          }
+        }
+      },
+      "HistoryLogLine": {
+        "type": "object",
+        "properties": {}
+      },
+      "Author": {
+        "type": "object",
+        "properties": {}
+      },
+      "FileMetadata": {
+        "type": "object",
+        "properties": {}
+      },
+      "PaperDTO": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "submissionDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "publicationDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transactions": {
+            "type": "object"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "number"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "socialComments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "canBeReviewed": {
+            "type": "boolean"
+          },
+          "gitRepository": {
+            "type": "string"
+          },
+          "openAireIdentifier": {
+            "type": "string"
+          },
+          "views": {
+            "type": "number"
+          },
+          "isLatestVersion": {
+            "type": "boolean"
+          },
+          "paperType": {
+            "enum": [
+              "book",
+              "book section",
+              "conference paper",
+              "article",
+              "patent",
+              "preprint",
+              "report",
+              "dataset",
+              "software documentation",
+              "thesis",
+              "technical note",
+              "working paper",
+              "policy report",
+              "registered report",
+              "proposal",
+              "review article",
+              "video",
+              "other"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "pending approval",
+              "published",
+              "preprint",
+              "rejected",
+              "merged"
+            ],
+            "type": "string"
+          },
+          "reviewType": {
+            "type": "string",
+            "enum": [
+              "open review"
+            ]
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HistoryLogLine"
+            }
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Author"
+            }
+          },
+          "publicationFile": {
+            "$ref": "#/components/schemas/FileMetadata"
+          }
+        },
+        "required": [
+          "_id",
+          "creator",
+          "title",
+          "abstract",
+          "createdAt",
+          "updatedAt",
+          "submissionDate",
+          "publicationDate",
+          "keywords",
+          "transactions",
+          "doi",
+          "disciplines",
+          "references",
+          "version",
+          "images",
+          "socialComments",
+          "canBeReviewed",
+          "gitRepository",
+          "openAireIdentifier",
+          "views",
+          "isLatestVersion",
+          "paperType",
+          "status",
+          "reviewType",
+          "history",
+          "authors",
+          "publicationFile"
+        ]
+      },
+      "PaperCreateDTO": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "creator"
+        ]
+      },
+      "PaperUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "submissionDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "publicationDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transactions": {
+            "type": "object"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "references": {
+            "type": "object"
+          },
+          "canBeReviewed": {
+            "type": "boolean"
+          },
+          "gitRepository": {
+            "type": "string"
+          },
+          "paperType": {
+            "type": "string",
+            "enum": [
+              "book",
+              "book section",
+              "conference paper",
+              "article",
+              "patent",
+              "preprint",
+              "report",
+              "dataset",
+              "software documentation",
+              "thesis",
+              "technical note",
+              "working paper",
+              "policy report",
+              "registered report",
+              "proposal",
+              "review article",
+              "video",
+              "other"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending approval",
+              "published",
+              "preprint",
+              "rejected",
+              "merged"
+            ]
+          },
+          "reviewType": {
+            "type": "string",
+            "enum": [
+              "open review"
+            ]
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Author"
+            }
+          }
+        }
+      },
+      "ReviewDTO": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "publicationDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "wasInvited": {
+            "type": "boolean"
+          },
+          "transactions": {
+            "type": "object"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "socialComments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "canBeReviewed": {
+            "type": "boolean"
+          },
+          "reward": {
+            "type": "number"
+          },
+          "revealReviewerIdentity": {
+            "type": "boolean"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "accepted",
+              "minor revision",
+              "major revision"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "published",
+              "pending approval"
+            ],
+            "type": "string"
+          },
+          "file": {
+            "$ref": "#/components/schemas/FileMetadata"
+          },
+          "kind": {
+            "enum": [
+              "peer review",
+              "copy editing"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "creator",
+          "title",
+          "createdAt",
+          "updatedAt",
+          "publicationDate",
+          "socialComments",
+          "canBeReviewed",
+          "revealReviewerIdentity",
+          "paper",
+          "status",
+          "kind"
+        ]
+      },
+      "ReviewCreateDTO": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "paper": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "creator",
+          "paper"
+        ]
+      },
+      "ReviewUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "published",
+              "pending approval"
+            ]
+          },
+          "reward": {
+            "type": "number"
+          },
+          "revealReviewerIdentity": {
+            "type": "boolean"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "accepted",
+              "minor revision",
+              "major revision"
+            ]
+          },
+          "doi": {
+            "type": "string"
+          },
+          "transactions": {
+            "type": "object"
+          },
+          "publicationDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "wasInvited": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ReputationModelDTO": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "version": {
+            "type": "number"
+          },
+          "sourceCodeURL": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "creator",
+          "name",
+          "description",
+          "version",
+          "sourceCodeURL",
+          "provider",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "ScoringDTO": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "reputationModel": {
+            "type": "string"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "reputationModel",
+          "paper",
+          "score",
+          "timestamp"
+        ]
+      },
+      "ReputationModelCreateDTO": {
+        "type": "object",
+        "properties": {
+          "creator": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "sourceCodeURL": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "creator",
+          "name",
+          "sourceCodeURL"
+        ]
+      },
+      "ReputationModelUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "version": {
+            "type": "number"
+          },
+          "sourceCodeURL": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "version",
+          "sourceCodeURL",
+          "provider"
+        ]
+      },
+      "LoginData": {
+        "type": "object",
+        "properties": {}
+      },
+      "ScoringCreateDTO": {
+        "type": "object",
+        "properties": {
+          "reputationModel": {
+            "type": "string"
+          },
+          "paper": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reputationModel",
+          "paper"
+        ]
+      },
+      "ScoringUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": "number"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "timestamp"
+        ]
+      },
+      "BlockchainNetworkDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "networkId": {
+            "type": "number"
+          },
+          "appAddress": {
+            "type": "string"
+          },
+          "escrowAddress": {
+            "type": "string"
+          },
+          "tokenAddress": {
+            "type": "string"
+          },
+          "explorerUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "displayName",
+          "networkId",
+          "appAddress",
+          "escrowAddress",
+          "tokenAddress",
+          "explorerUrl"
+        ]
+      }
+    }
+  }
+}
